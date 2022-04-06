@@ -1,0 +1,210 @@
+* {
+	font-family: Poppins sans-serif;
+}
+body,
+html {
+	height: 100%;
+}
+body {
+	background-color: #111;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+.video {
+	width: 100%;
+	height: 100%;
+}
+.c-video {
+	height: 450px;
+	width: 100%;
+	max-width: 800px;
+	position: relative;
+	overflow: hidden;
+}
+
+.c-video:hover .controls,
+.c-video.paused .controls {
+	transform: translateY(0);
+}
+
+.c-video.hide .controls {
+	transform: translateY(90%);
+}
+.c-video.hide .time {
+	opacity: 0;
+}
+
+.controls {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: rgba(0, 0, 0, 0.4);
+	transform: translateY(0);
+	transition: all 0.2s;
+}
+
+.buttons {
+	padding: 2px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.buttons button {
+	background: none;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}
+.buttons button::before {
+	font-family: "Font Awesome 5 Free";
+	content: '\f04b';
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	font-size: 20px;
+	color: #fff;
+	transition: all .2s;
+}
+.buttons button.play::before {
+	content: '\f04b';
+}
+.buttons button.pause::before {
+	content: '\f04c';
+}
+
+.orange-bar {
+	height: 7px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.4);
+	position: relative;
+}
+.orange-bar:hover .time {
+	opacity: 1;
+}
+.orange-juice {
+	position: absolute;
+	top: 0;
+	height: 7px;
+	width: 0;
+	background-color: red;
+}
+.range {
+	position: relative;
+	height: 7px;
+	width: 100px;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 30px;
+	margin-right: 5px;
+}
+.volume {
+	height: 7px;
+	width: 100px;
+	z-index: 2;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+}
+input[type='range'] {
+	-webkit-appearance: none;
+	background: transparent;
+	cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 15px;
+	width: 15px;
+	border-radius: 30px;
+	background: #ffffff;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+.volume-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100px;
+	background-color: white;
+	height: 7px;
+	border-radius: 30px;
+}
+.time {
+	opacity: 0;
+	width: 100%;
+	height: 7px;
+	position: absolute;
+	top: 0;
+	margin: 0;
+	z-index: 2;
+	transition: all 0.2s;
+}
+input[type='range'].time::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 15px;
+	width: 15px;
+	border-radius: 30px;
+	background: red;
+	cursor: pointer;
+	box-shadow: none;
+}
+#play-pause::after {
+	opacity: 0;
+	content: attr(data-after-play);
+	position: absolute;
+	top: -100%;
+	left: 0px;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 5px;
+	transition: all 0.2s;
+}
+#play-pause:hover::after {
+	opacity: 1;
+}
+.timeText {
+	color: #fff;
+}
+#loop {
+	position: absolute;
+	left: -20%;
+	top: -70%;
+}
+.contextMenu {
+	color: #fff;
+	position: absolute;
+	z-index: 100;
+	-webkit-font-smoothing: antialiased;
+}
+.contextMenu ul {
+	list-style: none;
+	padding: 0;
+	margin: 20;
+	width: 100px;
+	background-color: #444;
+}
+.contextMenu ul li {
+	height: 35px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.contextMenu ul li a {
+	font-size: 18px;
+	text-decoration: none;
+	color: #fff;
+}
+.contextMenu ul li a:active {
+	color: #ff0000
+}

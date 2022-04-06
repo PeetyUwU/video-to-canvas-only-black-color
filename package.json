@@ -1,0 +1,14 @@
+{
+  "name": "tracking-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peety",
+  "license": "ISC",
+  "dependencies": {
+    "tracking.js": "^0.1.1"
+  }
+}

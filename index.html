@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking</title>
+    <script defer defer src="tracking.js-master/build/tracking.js"></script>
+    <script defer src="tracking.js-master/build/data/face.js"></script>
+    <script defer src="tracking.js-master/build/data/eye.js"></script>
+    <script defer src="tracking.js-master/build/data/mouth.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="video.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="video.js"></script>
+    <script src="https://kit.fontawesome.com/2805acbf3a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="contextMenu" id="contextMenu" style="display: none;">
+        <ul>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="c-video" onmousemove="mouseMove(this)">
+            <video autoplay loading="lazy" class="video" onclick="togglePlayPause()"></video>
+            <div class="controls">
+                <div class="orange-bar">
+                    <input oninput="changeTime()" onmousedown="checkPaused()" onmouseup="playVid()" type="range" class="time" value="0" min="0" max="100" step="0.0000001" id="time">
+                    <div class="orange-juice"></div>
+                </div>
+                <div class="buttons">
+                    <button class="fa" id="play-pause" onclick="togglePlayPause()"></button>
+                    <div class="timeText">
+                        <span class="timeTexts" id="timeTxt">00:00 / 00:00</span>
+                    </div>
+                </div>
+                <div class="range">
+                    <input type="checkbox" id="loop">
+                    <input oninput="changeValue(this)" type="range" class="volume" value="100" min="0" max="100" id="volume">
+                    <div id="volume-bar" class="volume-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas style="display: none;" id="canvas" height="450" width="800"></canvas>
+    <canvas id="canvas2" height="450" width="800"></canvas>
+</body>
+</html>
