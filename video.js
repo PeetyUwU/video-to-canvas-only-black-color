@@ -44,6 +44,7 @@ function mouseMove() {
 
 document.addEventListener('keydown', (k) => {
 	if (k.key == ' ' || k.code == 'Spacebar') {
+		k.preventDefault();
 		togglePlayPause();
 	}
 });
