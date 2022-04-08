@@ -20,7 +20,7 @@ function mouseMove() {
 
 (async function () {
 	//! blob url
-	const result = await fetch('http://127.0.0.1:5500/anime.mp4');
+	const result = await fetch('http://127.0.0.1:5500/anime2.mp4');
 	const blob = await result.blob();
 	const objUrl = URL.createObjectURL(blob);
 	video.src = objUrl;
